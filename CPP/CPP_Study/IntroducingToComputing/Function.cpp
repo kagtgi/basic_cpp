@@ -17,31 +17,39 @@ bool isPrime(int n)
 {
     if (n <= 1)
         return false;
- 
-    for (int i = 2; i <= sqrt(n); i++)
-        if (n % i == 0)
+    else{
+        int count =0;
+        for(int i = 2; i <=sqrt(n); i++){
+            if (n%i == 0){
+                count ++;
+            }
+        }
+        if(count > 1){
             return false;
- 
-    return true;
+        }
+        else{
+            return true;
+        }
+    }
 }
 
 int Cube(int a){
     return a*a*a;
 }
 
-int convertBinaryToDecimal(long long n)
+int convertBinaryToDecimal(string n)
 {
     int decimalNumber = 0, i = 0, remainder;
-    while (n!=0)
+    int a = stoi(n);
+    while (a!=0)
     {
-        remainder = n%10;
-        n /= 10;
+        remainder = a%10;
+        a /= 10;
         decimalNumber += remainder*pow(2,i);
         ++i;
     }
     return decimalNumber;
 }
-
 string toBinary(int n)
 {
     string r;
