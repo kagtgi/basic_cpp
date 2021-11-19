@@ -59,17 +59,26 @@ string toBinary(int n)
     }
     return r;
 }
-void PrimeInRange(int n) //using Eratosthenes
+void PrimeInRange(int lower, int upper) //using Eratosthenes
 {   
-    vector<bool> prime(n + 1, true);
-    for (int p = 2; p * p <= n; p++)
-        if (prime[p] == true)
-            for (int i = p * 2; i <= n; i += p)
-                prime[i] = false; // Update all multiples of p
-    // Print all prime numbers, which value is true
-    for (int p = 2; p <= n; p++)
-        if (prime[p])
+    bool prime[upper+1];
+    for(int i = lower; i <= upper; i++){
+        prime[i]= true;
+    }
+    prime[0]=false;
+    prime[1]=false;
+    for (int p = 2; p * p <= upper; p++){
+        if (prime[p] == true){
+            for (int i = p * 2; i <= upper; i += p){
+                prime[i] = false;
+            }
+        }
+    }
+    for (int p = lower; p <=upper ; p++){
+        if (prime[p]){
             cout << p << " ";
+        }
+    }
 }
 
 void CircleCheck(int R){
