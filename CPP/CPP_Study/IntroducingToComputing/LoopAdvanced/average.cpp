@@ -1,19 +1,20 @@
-#include <iomanip>
-#include <iostream>
+#include<iostream>
+#include<iomanip>
+#include<stdlib.h>
+#include<math.h>
 using namespace std;
-
-int main(){
+int main()
+{
     int n;
     cin >> n;
-    int arr[n];
-    int sum = 0;
+    float arr[n];
+    float sum;
     for(int i = 0; i < n; i ++){
-        cin >> arr[i];
+        cin >>arr[i];
     }
     for(int i = 0; i < n; i ++){
-        sum += arr[i];
+        sum+=arr[i];
     }
-    cout << fixed << setprecision(2) << sum/n << endl;
-    system("pause");
-    return 0;
+    cout << fixed << setprecision(2)<< (float) sum/n << endl;
+    
 }

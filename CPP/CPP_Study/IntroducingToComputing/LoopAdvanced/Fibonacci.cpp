@@ -1,19 +1,28 @@
-#include <iomanip>
-#include <iostream>
+#include<iostream>
+#include<iomanip>
+#include<stdlib.h>
+#include<math.h>
+
 using namespace std;
 
-int main(){
-    int u= 0; 
-    int v = 1;
-    int t;
+int main()
+{
     int n;
     cin >> n;
-    for(int i=2; i<=n; i++){
-        t = u + v;
-        u = v;
-        v = t;
+    long long a = 0, b = 1, c, i;
+    if( n == 1){
+        cout << a;
     }
-    cout << t << endl;
-    system("pause");
-    return 0;
+    else{
+    for(i = 2; i < n; i++)
+    {
+       c = a + b;
+       a = b;
+       b = c;
+    }
+    cout << b;
+    }
+    
 }
+    
+    
