@@ -45,26 +45,21 @@ int main()
     //the main body, where students add, adjust the code to complete the program
 
     //The formula for the measurement 
-    V = R*5/1023;
-    // the light is off
+    V = R*(5.0/1023.0);
 
     if (V < 1.4 )
 
         cout << "The LED light is off " << endl;
 
-    // The light will have dim brightness
-
     else if (V>= 1.4 && V<2.5)
 
         cout << "The LED light will have dim brightness" << endl;
 
-    // The light will be of medium brightness
 
     else if (V >=2.5 && V <5)
 
         cout << "The LED light will be of medium brightness" << endl;
 
-    // The LED light will be of maximum brightness
 
     else if (V == 5)
 
@@ -74,7 +69,6 @@ int main()
 
         cout << "The LED light will be short-circuited" <<endl;
 
-    //(provided)
     system("pause");
     return 0;
 

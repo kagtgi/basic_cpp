@@ -61,15 +61,13 @@ vector<int> sortVector(std::vector<int> v)
 //MaxProductOf2ConsecutiveElement
 int maxProductOfAdjacentElements(std::vector<int> v)
 {
-    int max1 = 0;
-    int max2 = 1;
-    for( int i =0; i < v.size(); i ++){
-        max2 = v[i]* v[i+1];
-        if( max2 > max1){
-            max1 = max2;
+    int max = v[0] * v[1];
+    for (int i = 1; i < v.size() - 1; i++) {
+        if (v[i] * v[i + 1] > max) {
+            max = v[i] * v[i + 1];
         }
     }
-    return max1;
+    return max;
 }
 
 //Find longest strings in vector of strings
